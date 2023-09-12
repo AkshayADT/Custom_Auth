@@ -21,4 +21,4 @@ Route::post('/register-user',[CustomAuthController::class,'registerUser'])->name
 Route::post('/login-user', [CustomAuthController::class, 'loginUser'])->name('login-user');
 
 Route::post('/login-user', [CustomAuthController::class, 'loginUser'])->name('login-user');
-Route::get('/dashboard', [CustomAuthController::class, 'dashboard'])->name('dashboard');
+Route::get('/dashboard',[CustomAuthController::class,'dashboard'])->name('dashboard');

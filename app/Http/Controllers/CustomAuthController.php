@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+// use Illuminate\Contracts\Session\Session;
+use Session;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
@@ -59,6 +61,10 @@ class CustomAuthController extends Controller
 
     public function dashboard()
     {
-        return view('dashboard');
+        $data = array();
+        if (Session::has('loginId')) {
+            $data = User::where('id', '=', Session::get('loginId'))->first();
+        }
+        return view('auth.dashboard', compact('data'));
     }
 }
