@@ -45,7 +45,6 @@ class CustomAuthController extends Controller
             'email' => 'required|email',
             'password' => 'required|min:6|max:12'
         ]);
-
         $user = User::where('email', '=', $request->email)->first();
         if ($user) {
             if (Hash::check($request->password, $user->password)) {
@@ -59,12 +58,12 @@ class CustomAuthController extends Controller
         }
     }
 
-    public function dashboard()
-    {
-        $data = array();
-        if (Session::has('loginId')) {
-            $data = User::where('id', '=', Session::get('loginId'))->first();
-        }
-        return view('auth.dashboard', compact('data'));
-    }
+    // public function dashboard()
+    // {
+    //     $data = array();
+    //     if (Session::has('loginId')) {
+    //         $data = User::where('id', '=', Session::get('loginId'))->first();
+    //     }
+    //     return view('auth.dashboard', compact('data'));
+    // }
 }

@@ -16,9 +16,9 @@
         <div class="row">
             <div class="col-md-4 col-md-offset-4">
                 <h4>Login</h4>
-                <form action="{{ route('login-user') }}" method="post">
+                <form action="{{route('login-user')}}" method="post">
                     @if (Session::has('fail'))
-                        <div class="alert alert-danger"> {{ Session::get('fail') }} </div>
+                        <div class="alert alert-danger"> {{Session::get('fail')}} </div>
                     @endif
                     @csrf
                     <div class="form-group">

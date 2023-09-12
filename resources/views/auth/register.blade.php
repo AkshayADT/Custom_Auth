@@ -28,11 +28,9 @@
                         <label for="">name</label>
                         <input class="form-control" placeholder="Enter Your Name" type="text" name="name"
                             value="{{ old('name') }}">
-                        <span class="text-danger">
-                            @error('name')
-                                {{ $message }}
-                            @enderror
-                        </span>
+                            <span class="text-danger">@error('name')
+                                {{$message}}
+                            @enderror</span>
                     </div>
 
                     <div class="form-group">
